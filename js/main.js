@@ -1,3 +1,5 @@
+debugger;
+
 const images = [
     {
         image: 'img/01.webp',
@@ -22,17 +24,43 @@ const images = [
     }
 ];
 
-//costruiamo il container e inseriamo l'immagine grande in modo da poter stilare lo slider.
 
-const bigcarousel=document.getElementById("bigcarousel");
-bigcarousel.innerHTML=`
-   <img src="../${images[0].image}" alt="">
-`
-const slidelittlecarousel=document.getElementById("slidelittlecarousel");
-slidelittlecarousel.innerHTML=`
-        <img src="../${images[0].image}" alt="">
-        <img src="../${images[1].image}" alt="">
-        <img src="../${images[2].image}" alt="">
-        <img src="../${images[3].image}" alt="">
-        <img src="../${images[4].image}" alt="">
-`
+
+const slidecontent=document.querySelector("carousel-item");
+const buttonnext=document.querySelector("carousel-control-next");
+const buttonprec=document.querySelector("carousel-control-prev");
+
+let activeimage=0;
+
+for(let i=0;i<images.length;i++){
+    const currentimage=images[i];
+
+    let slideproperty="carousel-item";
+    if(i==activeimage){
+        slideproperty += "active"
+    }
+
+    const slide=`
+      <div class="${slideproperty}">
+                <img class="d-block w-100" src="${currentimage}" alt="Third slide">
+            </div>
+    `
+
+    slidecontent.innerHTML=slide;
+}
+
+
+buttonnext.addEventListener(
+    "click",
+    function(){
+        const slides=document.querySelector("carousel-item");
+
+        slides[activeimage].classList.remove("active");
+
+        activeimage++
+
+        slides[activeimage].classList.add("active");
+    }
+
+
+)
