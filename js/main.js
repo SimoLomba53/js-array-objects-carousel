@@ -39,15 +39,15 @@ for(let i=0;i<images.length;i++){
     if(i==activeimage){
         slideproperty += "active"
     }
-
+    
     const slide=`
       <div class="${slideproperty}">
-                <img class="d-block w-100" src="${currentimage}" alt="Third slide">
+                <img class="d-block w-100" src="${currentimage}">
             </div>
     `
-
     slidecontent.innerHTML=slide;
-}
+
+ }
 
 
 buttonnext.addEventListener(
@@ -58,6 +58,23 @@ buttonnext.addEventListener(
         slides[activeimage].classList.remove("active");
 
         activeimage++
+
+        slides[activeimage].classList.add("active");
+
+    
+    }
+
+
+)
+
+buttonprec.addEventListener(
+    "click",
+    function () {
+        const slides = document.querySelector("carousel-item");
+
+        slides[activeimage].classList.remove("active");
+
+        activeimage--
 
         slides[activeimage].classList.add("active");
     }
