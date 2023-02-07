@@ -32,8 +32,8 @@ const buttonprec=document.querySelector("carousel-control-prev");
 
 let activeimage=0;
 
-for(let i=0;i<images.length;i++){
-    const currentimage=images[i];
+for(let i=0;i<images.image;i++){
+    const currentimage=images[i].image;
 
     let slideproperty="carousel-item";
     if(i==activeimage){
