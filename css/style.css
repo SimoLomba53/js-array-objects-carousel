@@ -1,0 +1,20 @@
+.conteiner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.bigphoto img {
+    width: 700px;
+}
+
+.littlephoto {
+    display: flex;
+    flex-direction: column;
+}
+
+.littlephoto img {
+    width: 172px;
+    height: 172px;
+}

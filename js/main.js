@@ -24,7 +24,15 @@ const images = [
 
 //costruiamo il container e inseriamo l'immagine grande in modo da poter stilare lo slider.
 
-const bigImage=document.getElementById("bigimg");
-bigImage.innerHTML = `
-  <div id="bigimg"><img src="../${images[0].image}" alt=""</div>
+const bigcarousel=document.getElementById("bigcarousel");
+bigcarousel.innerHTML=`
+   <img src="../${images[0].image}" alt="">
+`
+const slidelittlecarousel=document.getElementById("slidelittlecarousel");
+slidelittlecarousel.innerHTML=`
+        <img src="../${images[0].image}" alt="">
+        <img src="../${images[1].image}" alt="">
+        <img src="../${images[2].image}" alt="">
+        <img src="../${images[3].image}" alt="">
+        <img src="../${images[4].image}" alt="">
 `
